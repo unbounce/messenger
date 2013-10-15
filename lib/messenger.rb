@@ -1,6 +1,7 @@
 require 'messenger/version'
 require 'messenger/listener'
 require 'messenger/worker'
+require 'messenger/railtie' if defined?(Rails)
 
 module Messenger
 
