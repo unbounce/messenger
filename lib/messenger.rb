@@ -1,4 +1,6 @@
 require 'messenger/version'
+require 'messenger/listener'
+require 'messenger/worker'
 
 module Messenger
 

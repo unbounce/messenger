@@ -11,7 +11,7 @@ module Messenger
     end
 
     def listen(type = nil)
-      listener = type.nil? @default_listener : listener_for type
+      listener = type.nil? ? @default_listener : listener_for(type)
       listener.listen
     end
 

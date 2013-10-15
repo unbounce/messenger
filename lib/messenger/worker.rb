@@ -11,7 +11,7 @@ module Messenger
     end
 
     def work(message, type = nil)
-      worker = type.nil? @default_worker : worker_for type
+      worker = type.nil? ? @default_worker : worker_for(type)
       worker.work message
     end
 
