@@ -34,13 +34,13 @@ class Messenger
     listener.listen
   end
 
-  def self.work(type = nil)
-    self.new.work type
+  def self.work(message, type = nil)
+    self.new.work message, type
   end
 
-  def work(type = nil)
+  def work(message, type = nil)
     worker = type.nil? ? @worker : worker_for(type)
-    worker.work
+    worker.work message
   end
 
   private
