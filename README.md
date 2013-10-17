@@ -60,7 +60,7 @@ must implement a `work` method that accepts one parameter.
 Add this line to your application's Gemfile:
 
   ```Ruby
-  gem 'messenger', git: 'https://github.com/unbounce/messenger'
+  gem 'messenger', git: 'git@github.com:unbounce/messenger.git'
   ```
 
 And then execute:
