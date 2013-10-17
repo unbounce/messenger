@@ -1,0 +1,31 @@
+class Messenger
+  module Listeners
+    class <%= class_name %>Listener
+      include Messenger::Listeners
+
+      attr_accessor :listening
+
+      class << self
+        attr_accessor :config
+      end
+
+      def initialize
+        @listening = true
+      end
+
+      def self.configure
+        self.config ||= Configuration.new
+        yield(config)
+      end
+
+      class Configuration
+        # attr_accessor :something
+      end
+
+      def listen
+        # Messenger.work with_something
+      end
+
+    end
+  end
+end

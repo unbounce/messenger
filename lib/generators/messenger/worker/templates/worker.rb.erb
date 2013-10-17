@@ -1,0 +1,25 @@
+class Messenger
+  module Workers
+    class <%= class_name %>Worker
+      include Messenger::Workers
+
+      class << self
+        attr_accessor :config
+      end
+
+      def self.configure
+        self.config ||= Configuration.new
+        yield(config)
+      end
+
+      class Configuration
+        # attr_accessor :something
+      end
+
+      def work
+        # Do somehthing...
+      end
+
+    end
+  end
+end
