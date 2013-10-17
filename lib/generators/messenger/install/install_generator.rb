@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-module Messenger
+class Messenger
   module Generators
     class InstallGenerator < Rails::Generators::Base
       desc "Installs Messenger's initializer"
