@@ -6,6 +6,7 @@ require 'messenger/version'
 Gem::Specification.new do |spec|
   spec.name          = 'messenger'
   spec.version       = Messenger::VERSION
+  spec.platform      = Gem::Platform::RUBY
   spec.authors       = ['James Brennan']
   spec.email         = ['james@jamesbrennan.ca']
   spec.description   = 'Messenger is a modular inter-service messenger.'
