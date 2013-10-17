@@ -1,4 +1,3 @@
-require 'messenger'
 require 'rails'
 
 module Messenger
