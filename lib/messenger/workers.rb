@@ -1,4 +1,4 @@
-module Messenger
+class Messenger
   module Workers
 
     def work

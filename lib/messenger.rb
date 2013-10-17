@@ -3,7 +3,7 @@ require 'messenger/listeners'
 require 'messenger/workers'
 require 'messenger/railtie' if defined?(Rails)
 
-module Messenger
+class Messenger
 
   attr_accessor :listener, :worker
 
@@ -11,7 +11,7 @@ module Messenger
     attr_accessor :config
   end
 
-  def initializer
+  def initialize
     @listener = listener_for self.class.config.listener_type
     @worker = worker_for self.class.config.worker_type
   end

@@ -1,6 +1,6 @@
 require 'rails'
 
-module Messenger
+class Messenger
   class Railtie < Rails::Railtie
     railtie_name :messenger
 
