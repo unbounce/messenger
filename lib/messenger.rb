@@ -14,6 +14,8 @@ class Messenger
   def initialize
     @listener = listener_for self.class.config.listener_type
     @worker = worker_for self.class.config.worker_type
+
+    @listener.worker = @worker
   end
 
   def self.configure
