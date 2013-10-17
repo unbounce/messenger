@@ -1,7 +1,7 @@
 class Messenger
   module Workers
 
-    def work
+    def work(message)
       raise NotImplementedError.new('Subclass must implement work')
     end
 
