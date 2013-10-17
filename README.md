@@ -66,13 +66,13 @@ Add this line to your application's Gemfile:
 And then execute:
 
   ```
-    $ bundle
+  $ bundle
   ```
 
 ### Configuration
 
 You must set which listener and worker the messenger will use. To create a configuration
-file in your application, run `rake messenger:install`. Set the appropriate type to your
+file in your application, run `rails g messenger:install`. Set the appropriate type to your
 listener or worker type, less the `_listener` or `_worker` suffix.
 
   ```Ruby
