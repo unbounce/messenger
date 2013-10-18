@@ -1,5 +1,6 @@
 class TestListener
-  include Messenger::Listeners
+
+  attr_accessor :worker
 
   def listen
   end
