@@ -1,7 +1,8 @@
 require 'messenger/version'
 require 'messenger/listeners'
 require 'messenger/workers'
-require 'messenger/railtie' if defined?(Rails)
+require 'messenger/railtie'
+require 'active_support/inflector'
 
 class Messenger
 
