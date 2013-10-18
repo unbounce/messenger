@@ -1,9 +1,11 @@
-require 'messenger'
 require 'simplecov'
 
 SimpleCov.start do
-  add_group 'Libraries', 'lib/'
+  add_group 'Libraries', '/lib/'
+  add_filter '/spec/'
 end
+
+require 'messenger'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
