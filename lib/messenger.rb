@@ -51,14 +51,28 @@ class Messenger
   private
 
     def listener_for(type)
-      classified = type.to_s.capitalize
-      klass = Object.const_get('Messenger').const_get('Listeners').const_get("#{classified}Listener")
+      classified = type.to_s.camelize
+
+      # Search for the namespaced class first
+      begin
+        klass = Object.const_get('Messenger').const_get('Listeners').const_get("#{classified}Listener")
+      rescue NameError
+        klass = Object.const_get("#{classified}Listener")
+      end
+
       klass.new
     end
 
     def worker_for(type)
-      classified = type.to_s.capitalize
-      klass = Object.const_get('Messenger').const_get('Workers').const_get("#{classified}Worker")
+      classified = type.to_s.camelize
+
+      # Search for the namespaced class first
+      begin
+        klass = Object.const_get('Messenger').const_get('Workers').const_get("#{classified}Worker")
+      rescue NameError
+        klass = Object.const_get("#{classified}Worker")
+      end
+
       klass.new
     end
 
