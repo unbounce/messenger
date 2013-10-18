@@ -6,3 +6,5 @@ RSpec.configure do |config|
   config.filter_run :focus
   config.order = 'random'
 end
+
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
