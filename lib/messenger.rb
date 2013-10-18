@@ -30,17 +30,9 @@ class Messenger
     attr_accessor :listener_type, :worker_type
   end
 
-  def self.listen(type = nil)
-    self.new.listen type
-  end
-
   def listen(type = nil)
     listener = type.nil? ? @listener : listener_for(type)
     listener.listen
-  end
-
-  def self.work(message, type = nil)
-    self.new.work message, type
   end
 
   def work(message, type = nil)

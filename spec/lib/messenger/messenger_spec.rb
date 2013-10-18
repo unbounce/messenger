@@ -13,14 +13,14 @@ describe Messenger do
       end
     end
 
-    describe '.listen' do
+    describe '#listen' do
       it 'should delegate listen to listener' do
         messenger.listener.should_receive :listen
         messenger.listen
       end
     end
 
-    describe '.work' do
+    describe '#work' do
       it 'should delegate work to worker' do
         messenger.worker.should_receive :work
         messenger.work 'on something'
@@ -39,14 +39,14 @@ describe Messenger do
       end
     end
 
-    describe '.listen' do
+    describe '#listen' do
       it 'should delegate listen to listener' do
         messenger.listener.should_receive :listen
         messenger.listen
       end
     end
 
-    describe '.work' do
+    describe '#work' do
       it 'should delegate work to worker' do
         messenger.worker.should_receive :work
         messenger.work 'on something'
