@@ -8,7 +8,7 @@ To create a listener in your application, run `rails g messenger:listener <type>
 Listeners must implement a `listen` method.
 
   ```Ruby
-  # Example lib/messenger/listeners/something.rb
+  # Example app/messenger/listeners/something.rb
   module Messenger
     module Listeners
       class Something
@@ -40,7 +40,7 @@ To create a listener in your application, run `rails g messenger:worker <type>`.
 must implement a `work` method that accepts one parameter.
 
   ```Ruby
-  # Example lib/messenger/workers/sidekiq.rb
+  # Example app/messenger/workers/sidekiq.rb
   module Messenger
     module Workers
       class Sidekiq
@@ -83,6 +83,13 @@ or any other class.
     config.listener_type = :sqs
     config.worker_type = :sidekiq
   end
+  ```
+
+Tell Rails where to find any listeners or workers you create:
+
+  ```Ruby
+  # config/application.rb
+  config.autoload_paths << "#{Rails.root}/app/messenger"
   ```
 
 ## Usage
