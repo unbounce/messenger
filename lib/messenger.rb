@@ -44,13 +44,27 @@ class Messenger
 
     def listener_for(type)
       classified = type.to_s.camelize
-      klass = Object.const_get('Messenger').const_get('Listeners').const_get("#{classified}")
+
+      begin
+        klass = Object.const_get('Messenger').const_get('Listeners').const_get("#{classified}")
+      rescue NameError
+        require "listeners/#{type}"
+        klass = Object.const_get('Messenger').const_get('Listeners').const_get("#{classified}")
+      end
+
       klass.new
     end
 
     def worker_for(type)
       classified = type.to_s.camelize
-      klass = Object.const_get('Messenger').const_get('Workers').const_get("#{classified}")
+
+      begin
+        klass = Object.const_get('Messenger').const_get('Workers').const_get("#{classified}")
+      rescue NameError
+        require "workers/#{type}"
+        klass = Object.const_get('Messenger').const_get('Workers').const_get("#{classified}")
+      end
+
       klass.new
     end
 
