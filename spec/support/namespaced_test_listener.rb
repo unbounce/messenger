@@ -1,6 +1,6 @@
 class Messenger
   module Listeners
-    class NamespacedTestListener
+    class NamespacedTest
       include Messenger::Listeners
 
       def listen

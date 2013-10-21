@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Messenger::Listeners::NamespacedTestListener do
+describe Messenger::Listeners::NamespacedTest do
 
   describe 'listen' do
-    let(:listener) { Messenger::Listeners::NamespacedTestListener.new }
+    let(:listener) { Messenger::Listeners::NamespacedTest.new }
 
     it { listener.respond_to?(:worker=).should be_true }
     it { listener.respond_to?(:worker).should be_true }
@@ -14,14 +14,14 @@ describe Messenger::Listeners::NamespacedTestListener do
 
     context 'without #listen' do
       before :all do
-        class Messenger::Listeners::NamespacedTestListener
+        class Messenger::Listeners::NamespacedTest
           alias :temp_listen :listen
           remove_method :listen
         end
       end
 
       after :all do
-        class Messenger::Listeners::NamespacedTestListener
+        class Messenger::Listeners::NamespacedTest
           alias :listen :temp_listen
           remove_method :temp_listen
         end

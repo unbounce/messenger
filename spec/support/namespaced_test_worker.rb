@@ -1,6 +1,6 @@
 class Messenger
   module Workers
-    class NamespacedTestWorker
+    class NamespacedTest
       include Messenger::Workers
 
       def work(message)

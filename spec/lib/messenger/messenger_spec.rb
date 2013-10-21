@@ -8,8 +8,8 @@ describe Messenger do
 
     before do
       Messenger.configure do |config|
-        config.listener_type = :test
-        config.worker_type = :test
+        config.listener_type = :test_listener
+        config.worker_type = :test_worker
       end
     end
 
