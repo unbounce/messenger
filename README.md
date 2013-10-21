@@ -8,10 +8,10 @@ To create a listener in your application, run `rails g messenger:listener <type>
 Listeners must implement a `listen` method.
 
   ```Ruby
-  # Example lib/messenger/workers/something_listener.rb
+  # Example lib/messenger/listeners/something.rb
   module Messenger
     module Listeners
-      class SomethingListener
+      class Something
         include Messenger::Listeners
 
         def listen
@@ -40,10 +40,10 @@ To create a listener in your application, run `rails g messenger:worker <type>`.
 must implement a `work` method that accepts one parameter.
 
   ```Ruby
-  # Example lib/messenger/workers/sidekiq_worker.rb
+  # Example lib/messenger/workers/sidekiq.rb
   module Messenger
     module Workers
-      class SidekiqWorker
+      class Sidekiq
         include Messenger::Workers
 
         def work(message)
@@ -73,7 +73,8 @@ And then execute:
 
 You must set which listener and worker the messenger will use. To create a configuration
 file in your application, run `rails g messenger:install`. Set the appropriate type to your
-listener or worker type, less the `_listener` or `_worker` suffix.
+listener or worker type. This can be a child of `Messenger::Listeners` or `Messenger::Workers`
+or any other class.
 
   ```Ruby
   # Example config/initializers/messenger.rb

@@ -10,7 +10,7 @@ class Messenger
       end
 
       def create_listener_file
-        template 'listener.rb.erb', File.join('lib/messenger/listeners', class_path, "#{file_name}_listener.rb")
+        template 'listener.rb.erb', File.join('lib/messenger/listeners', class_path, "#{file_name}.rb")
       end
 
     end

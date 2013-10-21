@@ -10,7 +10,7 @@ class Messenger
       end
 
       def create_worker_file
-        template 'worker.rb.erb', File.join('lib/messenger/workers', class_path, "#{file_name}_worker.rb")
+        template 'worker.rb.erb', File.join('lib/messenger/workers', class_path, "#{file_name}.rb")
       end
 
     end
